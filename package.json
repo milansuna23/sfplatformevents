@@ -6,7 +6,9 @@
     "start": "node app.js"
   },
   "dependencies": {
-     "jsforce": "^1.9.1"  
+    "jsforce": "^1.9.1",
+    "debug": "~2.2.0",
+    "express": "~4.13.1",
   },
   "main": "app.js",
   "author": "",
