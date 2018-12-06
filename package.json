@@ -6,7 +6,7 @@
     "start": "node app.js"
   },
   "engines": {
-   "node": "10.3.0"
+   "node": "10.13.0"
   },
   "dependencies": {
     "jsforce": "^1.9.1",
