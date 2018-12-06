@@ -7,7 +7,7 @@
   },
   "dependencies": {
      "jsforce": "^1.9.1"  
-  }
+  },
   "main": "app.js",
   "author": "",
   "license": "ISC"
