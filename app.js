@@ -13,6 +13,8 @@ conn.login(username, password, function(err, userInfo) {
   if (err) { return console.error(err); }
   conn.streaming.topic("/event/Partner_Lead_Event__e").subscribe(function(message) {
     console.dir(message);
+    const divBody = document.querySelector('#eventDiv');
+    divBody.innerHTML=message;
   });
 });
 function renderHome(req, res, next) {
