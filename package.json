@@ -5,6 +5,9 @@
   "scripts": {
     "start": "node app.js"
   },
+  "engines": {
+   "node": "10.3.0"
+  },
   "dependencies": {
     "jsforce": "^1.9.1",
     "debug": "~2.2.0",
