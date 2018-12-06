@@ -1,6 +1,6 @@
 var express = require('express');
 var jsforce = require('jsforce');
-var app = express().get('/', 'initialized');
+var app = express().get('/', renderHome);
 var server = require('http').Server(app);
 const PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
 server.listen(PORT);
@@ -13,3 +13,6 @@ conn.login(username, password, function(err, userInfo) {
     console.dir(message);
   });
 });
+function renderHome(req, res, next) {
+  res.render(path.join(__dirname, '/'));
+}
