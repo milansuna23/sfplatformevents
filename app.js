@@ -1,6 +1,6 @@
 var express = require('express');
 var jsforce = require('jsforce');
-var app = express().get('/', renderHome);
+var app = express();
 var server = require('http').Server(app);
 const PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
 server.listen(PORT);
