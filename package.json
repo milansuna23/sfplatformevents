@@ -1,9 +1,10 @@
 {
   "name": "sfplatformevents",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "dev": "../node_modules/.bin/nodemon ./bin/www"
   },
   "engines": {
    "node": "10.13.0"
