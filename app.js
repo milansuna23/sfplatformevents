@@ -3,6 +3,7 @@ var jsforce = require('jsforce');
 var app = express();
 var server = require('http').Server(app);
 exports.PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
+server.listen(PORT);
 var username = 'test-i9batbfndswe@example.com';
 var password = '5$9JQgA5S7J7JteRuM8fFDzSxC0iwMZceIG';
 var conn = new jsforce.Connection({loginUrl:'https://test.salesforce.com'});
