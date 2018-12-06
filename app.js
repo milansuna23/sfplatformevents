@@ -15,5 +15,5 @@ conn.login(username, password, function(err, userInfo) {
   });
 });
 function renderHome(req, res, next) {
-  res.render(path.join(__dirname, '/pages/home'));
+  res.render(path.join(__dirname, 'pages/home'));
 }
