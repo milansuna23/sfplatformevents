@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node app.js"
+    "start": "node ./app.js"
   },
+  "dependencies": {
+     "jsforce": "^1.9.1"  
+  }
   "main": "app.js",
   "author": "",
   "license": "ISC"
