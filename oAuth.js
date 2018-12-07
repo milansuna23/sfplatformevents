@@ -28,6 +28,7 @@ app.get('/getAccessToken', function(req,res) {
   const oauth2 = new jsforce.OAuth2({
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET_ID,
+    loginUrl: process.env.LOGIN_SERVER,
     redirectUri: process.env.REDIRECT_URI
   });
   const conn = new jsforce.Connection({ oauth2 : oauth2 });
