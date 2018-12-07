@@ -12,13 +12,15 @@ var io = require('socket.io')(server);
 // get a reference to the socket once a client connects
 var socket = io.sockets.on('connection', function (socket) { });
 
-app.get('/oauth2/auth', function(req, res) {
-  const oauth2 = new jsforce.OAuth2({
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET_ID,
-    redirectUri: `${req.protocol}://${req.get('host')}/${process.env.REDIRECT_URI}`
+app.get('/', function (req, res) {
+  app.get('/oauth2/auth', function(req, res) {
+    const oauth2 = new jsforce.OAuth2({
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET_ID,
+      redirectUri: `${req.protocol}://${req.get('host')}/${process.env.REDIRECT_URI}`
+    });
+    res.redirect(oauth2.getAuthorizationUrl({}));
   });
-  res.redirect(oauth2.getAuthorizationUrl({}));
 });
 
 app.get('/getAccessToken', function(req,res) {
