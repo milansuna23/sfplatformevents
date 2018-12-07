@@ -45,8 +45,3 @@ app.get('/getAccessToken', function(req,res) {
     });
   });
 });
-
-app.set('view engine', 'ejs').get('/', renderHome);
-function renderHome(req, res, next) {
-  res.render(path.join(__dirname, 'pages/home'));
-}
