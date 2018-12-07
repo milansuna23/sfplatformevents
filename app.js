@@ -21,6 +21,12 @@ conn.login(username, password, function(err, userInfo) {
     console.log(socket);
   });
 });
+
+app.use(function(req, res, next){
+  res.io = io;
+  next();
+});
+
 function renderHome(req, res, next) {
   res.render(path.join(__dirname, 'pages/home'));
 }
