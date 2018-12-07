@@ -8,8 +8,9 @@
     <script type="text/javascript">			
 			var socket = io();
 			socket.on('event-processed', function (data) {
-				var results = JSON.parse(data);
+				var results = JSON.stringify(data);
 				console.log(results);	
+		         });
      </script>
   
   </head>
