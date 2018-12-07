@@ -22,7 +22,7 @@ conn.login(username, password, function(err, userInfo) {
   });
 });
 
-app.use(function(req, res, next){
+app.use(path.join(__dirname, 'pages/home'), function(req, res, next){
   res.io = io;
   next();
 });
