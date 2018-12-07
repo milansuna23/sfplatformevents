@@ -3,7 +3,7 @@ var jsforce = require('jsforce');
 var path = require('path');
 process.env.CLIENT_ID='3MVG9w8uXui2aB_pAtfoLESLXYEXcOJIMvTFcYLYkVddlAUCbvsvxYANYyNzGj9p63LR4nkj_mmwSbUBnllfS';
 process.env.CLIENT_SECRET_ID='5779680760685351853';
-process.env.REDIRECT_URI='getAccessToken';
+process.env.REDIRECT_URI='https://test.salesforce.com/getAccessToken';
 var app = express();
 var server = require('http').Server(app);
 const PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
@@ -16,7 +16,7 @@ var socket = io.sockets.on('connection', function (socket) { });
     const oauth2 = new jsforce.OAuth2({
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET_ID,
-      redirectUri: `${req.protocol}://${req.get('host')}/${process.env.REDIRECT_URI}`
+      redirectUri: process.env.REDIRECT_URI
     });
     res.redirect(oauth2.getAuthorizationUrl({}));
   });
