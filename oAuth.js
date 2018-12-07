@@ -17,7 +17,7 @@ var socket = io.sockets.on('connection', function (socket) { });
     const oauth2 = new jsforce.OAuth2({
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET_ID,
-      loginServer: process.env.LOGIN_SERVER,
+      loginUrl: process.env.LOGIN_SERVER,
       redirectUri: process.env.REDIRECT_URI
     });
     res.redirect(oauth2.getAuthorizationUrl({}));
