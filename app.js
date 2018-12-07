@@ -17,7 +17,7 @@ conn.login(username, password, function(err, userInfo) {
   conn.streaming.topic("/event/Partner_Lead_Event__e").subscribe(function(message) {
     console.dir(message);
     // emit the record to be displayed on the page
-    socket.emit('event-processed', JSON.stringify(data));
+    socket.emit('event-processed', JSON.stringify(message));
     console.log(socket);
   });
 });
