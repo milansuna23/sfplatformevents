@@ -3,7 +3,7 @@ var jsforce = require('jsforce');
 var path = require('path');
 process.env.CLIENT_ID='3MVG9w8uXui2aB_pAtfoLESLXYEXcOJIMvTFcYLYkVddlAUCbvsvxYANYyNzGj9p63LR4nkj_mmwSbUBnllfS';
 process.env.CLIENT_SECRET_ID='5779680760685351853';
-process.env.REDIRECT_URI='https://test.salesforce.com/getAccessToken';
+process.env.REDIRECT_URI='https://test.salesforce.com/services/oauth2/token';
 process.env.LOGIN_SERVER='https://test.salesforce.com';
 var app = express();
 var server = require('http').Server(app);
@@ -24,7 +24,7 @@ var socket = io.sockets.on('connection', function (socket) { });
   });
 
 
-app.get('/getAccessToken', function(req,res) {
+app.get('/token', function(req,res) {
   const oauth2 = new jsforce.OAuth2({
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET_ID,
