@@ -11,6 +11,8 @@
 			socket.on('event-processed', function (data) {
 				var results = JSON.stringify(data);
 				console.log(results);	
+				var divinnerHTML = document.getElementById('#eventDiv');
+				divinnerHTML.innerHTML = results;				
 		         });
      </script>
   
