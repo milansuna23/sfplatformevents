@@ -24,7 +24,7 @@ var socket = io.sockets.on('connection', function (socket) { });
   });
 
 
-app.get('/token', function(req,res) {
+app.get('/oauth/_callback', function(req,res) {
   const oauth2 = new jsforce.OAuth2({
     clientId: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET_ID,
