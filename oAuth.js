@@ -36,17 +36,16 @@ app.get('/oauth/_callback', function(req,res) {
     if (err) {
       return console.error(err);
     }
-    const conn2 = new jsforce.Connection({
+    console.log("User info is: "+ userInfo); 
+   /* const conn2 = new jsforce.Connection({
       instanceUrl : conn.instanceUrl,
       accessToken : conn.accessToken
     });
     conn2.identity(function(err, res) {
       if (err) { return console.error(err); }
-      console.log("user ID: " + res.user_id);
-      console.log("organization ID: " + res.organization_id);
-      console.log("username: " + res.username);
       console.log("display name: " + res.display_name);
-    });
+    }); */
+    
   });
 });
 
