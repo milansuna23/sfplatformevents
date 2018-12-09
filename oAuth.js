@@ -12,7 +12,7 @@ server.listen(PORT);
 var io = require('socket.io')(server);
 // get a reference to the socket once a client connects
 var socket = io.sockets.on('connection', function (socket) { });
-
+app.set('view engine', 'ejs');
   app.get('/', function(req, res) {
     const oauth2 = new jsforce.OAuth2({
       clientId: process.env.CLIENT_ID,
