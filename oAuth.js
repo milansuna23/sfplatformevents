@@ -36,7 +36,7 @@ app.get('/oauth/_callback', function(req,res) {
     if (err) {
       return console.error(err);
     }
-    console.log("User info is: "+ userInfo); 
+    console.log("User info is: "+ JSON.stringify(userInfo, null, 2)); 
    /* const conn2 = new jsforce.Connection({
       instanceUrl : conn.instanceUrl,
       accessToken : conn.accessToken
@@ -47,10 +47,8 @@ app.get('/oauth/_callback', function(req,res) {
     }); */
     
   });
+  res.render(path.join(__dirname, 'pages/home'));
 });
 
-app.set('view engine', 'ejs').get('/', renderHome);
-function renderHome(req, res, next) {
-  res.render(path.join(__dirname, 'pages/home'));
-}
+
 
