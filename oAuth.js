@@ -47,12 +47,11 @@ app.get('/oauth/_callback', function(req,res) {
       if (err) { return console.error(err); }
       console.log("display name: " + res.display_name);
     }); */
-    
+    else {
+        subscribeToEvents( conn, res );
+    }  
   });
-  //res.render(path.join(__dirname, 'pages/home'));
-  else {
-      subscribeToEvents( conn, res );
-  }
+  //res.render(path.join(__dirname, 'pages/home'));  
   console.log("User info is: "+ JSON.stringify(userInfo, null, 2)); 
 });
 
