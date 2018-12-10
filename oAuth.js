@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
       loginUrl: process.env.LOGIN_SERVER,
       redirectUri: process.env.REDIRECT_URI
     });
-    res.redirect(oauth2.getAuthorizationUrl({}));
+    res.redirect(oauth2.getAuthorizationUrl({scope : 'api id web refresh_token' }));
   });
 
 
