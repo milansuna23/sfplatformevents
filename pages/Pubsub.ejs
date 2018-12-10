@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Subscribed to Lead Events</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">			
+			var socket = io();
+			socket.on('event-processed', function (data) {
+				var results = JSON.stringify(data);
+				console.log(results);	
+				var divinnerHTML = document.getElementById('eventDiv');
+				divinnerHTML.innerHTML = results;				
+		    });
+     </script>
+  
+  </head>
+
+  <body class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Salesforce Platform Events with Heroku</h1>
+      <p class="lead">This is a POC for an Salesforce Platform events.</p>    
+    </div>
+    <div id="eventDiv" class="jumbotron">
+    
+    <div>
+    
+    <div>
+        <a href="/publish?accessToken=<%- accessToken %>&instanceUrl=<%- instanceUrl %>&version=<%- version %>"Publish Event</a>
+    </div>
+    
+  </body>
+
+  
+</html>
