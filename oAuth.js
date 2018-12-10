@@ -63,8 +63,8 @@ app.get('/oauth/_callback', function(req,res) {
     }); */
     else {
         subscribeToEvents( conn, res );
-    }  
-    subscribeToEvents( conn, res );  
+    } 
+    
     console.log("User info is: "+ JSON.stringify(userInfo, null, 2)); 
   });
   //res.render(path.join(__dirname, 'pages/home')); 
