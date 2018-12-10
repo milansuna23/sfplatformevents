@@ -55,7 +55,8 @@ app.get('/oauth/_callback', function(req,res) {
 
 function subscribeToEvents( sfClient, res ) {
 
-    console.log( 'subscribing to events...'+ JSON.stringify(sfClient, null, 2));
+    console.log( 'subscribing to events...'+ sfClient.accessToken);
+    console.log('instance url is:'+ sfClient.instanceUrl);
     sfClient.streaming.topic("/event/Partner_Lead_Event__e").subscribe( function( message ) {
 
         console.log( '-- RECEIVED EVENT -----------------------------------------------' );
