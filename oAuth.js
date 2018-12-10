@@ -10,9 +10,9 @@ var app = express();
 var server = require('http').Server(app);
 const PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
 server.listen(PORT);
-//var io = require('socket.io')(server);
+var io = require('socket.io')(server);
 // get a reference to the socket once a client connects
-//var socket = io.sockets.on('connection', function (socket) { });
+var socket = io.sockets.on('connection', function (socket) { });
 app.set('view engine', 'ejs');
 
   app.get('/', function(req, res) {
