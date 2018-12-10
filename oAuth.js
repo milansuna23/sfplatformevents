@@ -10,9 +10,9 @@ var app = express();
 var server = require('http').Server(app);
 const PORT = process.env.PORT || 3001; // use heroku's dynamic port or 3001 if localhost
 server.listen(PORT);
-var io = require('socket.io')(server);
+//var io = require('socket.io')(server);
 // get a reference to the socket once a client connects
-var socket = io.sockets.on('connection', function (socket) { });
+//var socket = io.sockets.on('connection', function (socket) { });
 app.set('view engine', 'ejs');
   app.get('/', function(req, res) {
     const oauth2 = new jsforce.OAuth2({
@@ -59,7 +59,7 @@ app.get('/oauth/_callback', function(req,res) {
 
 function subscribeToEvents( sfClient, res ) {
 
-    console.log( 'subscribing to events...'+ sfClient.accessToken);
+    console.log( 'subscribing to events11...'+ sfClient.accessToken);
     console.log('instance url is:'+ sfClient.instanceUrl);
     sfClient.streaming.topic("/event/Partner_Lead_Event__e").subscribe( function( message ) {
 
