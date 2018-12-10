@@ -50,9 +50,10 @@ app.get('/oauth/_callback', function(req,res) {
     else {
         subscribeToEvents( conn, res );
     }  
+    console.log("User info is: "+ JSON.stringify(userInfo, null, 2)); 
   });
-  //res.render(path.join(__dirname, 'pages/home'));  
-  console.log("User info is: "+ JSON.stringify(userInfo, null, 2)); 
+  //res.render(path.join(__dirname, 'pages/home')); 
+  
 });
 
 
@@ -80,11 +81,11 @@ app.get( '/subscribe', function( req, res ) {
     // per user; for simplicity (and not very secure)
     // just passing around as URL parameters
     console.log('req is:'+ req);
-   /* res.render( 'Pubsub', {
+    res.render( 'Pubsub', {
         'accessToken' : req.query.accessToken,
         'instanceUrl' : req.query.instanceUrl,
         'version' : req.query.version || process.env.SALESFORCE_API_VERSION
-    }); */
+    }); 
 
 });
 
