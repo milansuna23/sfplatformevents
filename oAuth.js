@@ -67,6 +67,8 @@ function subscribeToEvents( sfClient, res ) {
 
         console.log( '-- RECEIVED EVENT -----------------------------------------------' );
         console.log( message );
+        socket.emit('event-processed', JSON.stringify(message));
+        console.log(socket);
 
     });
 
