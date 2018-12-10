@@ -14,6 +14,20 @@ server.listen(PORT);
 // get a reference to the socket once a client connects
 //var socket = io.sockets.on('connection', function (socket) { });
 app.set('view engine', 'ejs');
+app.use( function( req, res, next ) {
+
+    // tell browsers not to cache
+    // by always setting these headers on responses
+    res.set({
+        'Cache-Control' : 'private, no-cache, no-store, must-revalidate',
+        'Expires' : '-1',
+        'Pragma' : 'no-cache'
+    });
+
+    next();
+
+});
+
   app.get('/', function(req, res) {
     const oauth2 = new jsforce.OAuth2({
       clientId: process.env.CLIENT_ID,
