@@ -56,9 +56,7 @@ app.get('/oauth/_callback', function(req,res) {
 function subscribeToEvents( sfClient, res ) {
 
     console.log( 'subscribing to events...' );
-
-    // http://paulbattisson.com/blog/2017/consuming-platform-events-in-10-lines-of-javascript/
-    sfClient.streaming.topic( '/event/Swag_Level__e' ).subscribe( function( message ) {
+    sfClient.streaming.topic( '/event/Partner_Lead_Event__e' ).subscribe( function( message ) {
 
         console.log( '-- RECEIVED EVENT -----------------------------------------------' );
         console.log( message );
@@ -98,7 +96,7 @@ app.get( '/publish', function( req, res ) {
 
     sfClient.sobject( 'Partner_Lead_Event__e' ).create({
 
-        'Lead_Id__c' : 'SFLeadId';
+        'Lead_Id__c' : 'SFLeadIdsub'
 
     }).then( function( result ) {
 
