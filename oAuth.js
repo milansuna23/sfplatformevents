@@ -81,7 +81,7 @@ app.get( '/subscribe', function( req, res ) {
     // per user; for simplicity (and not very secure)
     // just passing around as URL parameters
     console.log('req is:'+ req);
-    res.render( 'pages/Pubsub', {
+    res.render( path.join(__dirname, 'pages/Pubsub'), {
         'accessToken' : req.query.accessToken,
         'instanceUrl' : req.query.instanceUrl,
         'version' : req.query.version || process.env.SALESFORCE_API_VERSION
